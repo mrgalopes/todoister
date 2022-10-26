@@ -6,8 +6,15 @@ authors = ["Gabriel Lopes Rodrigues <gabriellopes@usp.br>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
+todoist-api-python = "^2.0.1"
+python-dotenv = "^0.21.0"
 
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^5.0.4"
+black = "^22.10.0"
+isort = "^5.10.1"
 
 [build-system]
 requires = ["poetry-core"]
