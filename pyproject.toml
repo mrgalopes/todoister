@@ -16,6 +16,9 @@ flake8 = "^5.0.4"
 black = "^22.10.0"
 isort = "^5.10.1"
 
+[tool.poetry.scripts]
+todoister = "todoister.cli:add_task"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
