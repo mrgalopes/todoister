@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+chosen=$(xclip -o | rofi -dmenu -l 1 -p "Add todo")
+
+todoister "$chosen"
