@@ -24,6 +24,6 @@ def get_api_key_from_env_file():
 
     api_key = envs.get("TODOIST_API_KEY")
     if api_key is None:
-        notify("API KEY IS NONE")
+        notify("Error", "Could not load Todoist API Key")
         exit(1)
     return api_key

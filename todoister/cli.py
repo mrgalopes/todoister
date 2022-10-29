@@ -15,7 +15,7 @@ def add_task():
     api = TodoistAPI(api_key)
     try:
         api.add_task(content=todo)
-        notify(f"Adicionado: {todo}")
+        notify("Todo added", f"{todo}")
     except Exception as error:
-        notify(f"Error: {error}")
+        notify("Error", f"{error}")
         print(error)

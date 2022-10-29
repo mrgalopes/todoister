@@ -1,5 +1,5 @@
 import subprocess
 
 
-def notify(message):
-    subprocess.run(["notify-send", f"{message}"])
+def notify(title, message):
+    subprocess.run(["notify-send", f"{title}", f"{message}"])
