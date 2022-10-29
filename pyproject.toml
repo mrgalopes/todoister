@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "todoister"
-version = "0.2.0"
+version = "0.3.0"
 description = ""
 authors = ["Gabriel Lopes Rodrigues <gabriellopes@usp.br>"]
 readme = "README.md"
