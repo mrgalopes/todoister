@@ -36,7 +36,7 @@ poetry run python -m todoister "Buy some eggs"
 ## To-dos
 
 - [ ] Add tests
-- [ ] Run linter and formatter pre-commit
+- [X] Run linter and formatter pre-commit
 - [X] Make cli more flexible
 - [ ] Add more commands, perhaps?
 - [ ] Add option to skip desktop notification

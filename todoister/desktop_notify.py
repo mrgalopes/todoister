@@ -2,4 +2,4 @@ import subprocess
 
 
 def notify(title, message):
-    subprocess.run(["notify-send", f"{title}", f"{message}", "-a", f"Todoister"])
+    subprocess.run(["notify-send", f"{title}", f"{message}", "-a", "Todoister"])

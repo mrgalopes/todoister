@@ -7,10 +7,12 @@ from todoister.desktop_notify import notify
 
 DEFAULT_API_KEY_FILE = Path.home() / ".todoist_api_key"
 
+
 def load_api_key():
     if DEFAULT_API_KEY_FILE.exists():
         return DEFAULT_API_KEY_FILE.read_text().strip()
     return get_api_key_from_env_file()
+
 
 def get_api_key_from_env_file():
     dir_path = os.path.dirname(os.path.realpath(__file__))

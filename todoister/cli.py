@@ -7,7 +7,7 @@ from todoister.api_key import load_api_key
 
 
 @click.command(help="Adds task to Todoist inbox")
-@click.argument('todo')
+@click.argument("todo")
 def add_task(todo):
     api = TodoistAPI(load_api_key())
     try:
