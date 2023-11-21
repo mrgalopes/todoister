@@ -3,9 +3,11 @@ from pathlib import Path
 
 from dotenv import dotenv_values
 
-from todoister.desktop_notify import notify
-
 DEFAULT_API_KEY_FILE = Path.home() / ".todoist_api_key"
+
+
+class ApiKeyNotFound(Exception):
+    """Raise when Api Key was not found with the usual ways"""
 
 
 def load_api_key():
@@ -20,6 +22,5 @@ def get_api_key_from_env_file():
 
     api_key = envs.get("TODOIST_API_KEY")
     if api_key is None:
-        notify("Error", "Could not load Todoist API Key")
-        exit(1)
+        raise ApiKeyNotFound("Could not load Todoist API Key")
     return api_key

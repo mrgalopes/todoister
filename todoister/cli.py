@@ -1,3 +1,5 @@
+import sys
+
 import click
 from todoist_api_python.api import TodoistAPI
 
@@ -7,11 +9,21 @@ from todoister.desktop_notify import notify
 
 @click.command(help="Adds task to Todoist inbox")
 @click.argument("todo")
-def add_task(todo):
-    api = TodoistAPI(load_api_key())
+@click.option(
+    "--notify",
+    "should_notify",
+    default=True,
+    show_default=True,
+    help="Send desktop notification on success or failure",
+)
+def add_task(todo, should_notify):
     try:
+        api = TodoistAPI(load_api_key())
         api.add_task(content=todo)
-        notify("Todo added", f"{todo}")
+        if should_notify:
+            notify("Todo added", f"{todo}")
     except Exception as error:
-        notify("Error", f"{error}")
-        print(error)
+        print(error, file=sys.stderr)
+        if should_notify:
+            notify("Error", f"{error}")
+        exit(1)
