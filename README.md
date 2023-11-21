@@ -39,4 +39,4 @@ poetry run python -m todoister "Buy some eggs"
 - [X] Run linter and formatter pre-commit
 - [X] Make cli more flexible
 - [ ] Add more commands, perhaps?
-- [ ] Add option to skip desktop notification
+- [X] Add option to skip desktop notification
