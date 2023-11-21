@@ -18,7 +18,7 @@ pipx install git+https://github.com/mrgalopes/todoister.git
 If installed using pipx:
 
 ```sh
-python -m todoister "Buy some eggs"
+todoister "Buy some eggs"
 ```
 
 Else, do:
@@ -37,6 +37,6 @@ poetry run python -m todoister "Buy some eggs"
 
 - [ ] Add tests
 - [ ] Run linter and formatter pre-commit
-- [ ] Make cli more flexible
-  - Add more commands, perhaps?
+- [X] Make cli more flexible
+- [ ] Add more commands, perhaps?
 - [ ] Add option to skip desktop notification
