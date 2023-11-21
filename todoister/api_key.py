@@ -3,16 +3,14 @@ from pathlib import Path
 
 from dotenv import dotenv_values
 
-DEFAULT_API_KEY_FILE = Path.home() / ".todoist_api_key"
-
 
 class ApiKeyNotFound(Exception):
     """Raise when Api Key was not found with the usual ways"""
 
 
-def load_api_key():
-    if DEFAULT_API_KEY_FILE.exists():
-        return DEFAULT_API_KEY_FILE.read_text().strip()
+def load_api_key(api_key_file: Path):
+    if api_key_file.exists():
+        return api_key_file.read_text().strip()
     return get_api_key_from_env_file()
 
 
