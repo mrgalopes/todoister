@@ -1,9 +1,8 @@
 import click
-
 from todoist_api_python.api import TodoistAPI
 
-from todoister.desktop_notify import notify
 from todoister.api_key import load_api_key
+from todoister.desktop_notify import notify
 
 
 @click.command(help="Adds task to Todoist inbox")
