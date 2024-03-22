@@ -29,6 +29,9 @@ DEFAULT_API_KEY_FILE = Path.home() / ".todoist_api_key"
     help="File containing Todoist API Key",
 )
 def add_task(todo, should_notify, api_key_file):
+    if not todo:
+        print("please provide a todo")
+        exit(0)
     try:
         api = TodoistAPI(load_api_key(api_key_file))
         api.add_task(content=todo)
