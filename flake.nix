@@ -28,8 +28,8 @@
           preferWheels = true;
         };
         wofi-todo = writeShellScriptBin "wofi-todo.sh" ''
-          chosen=$(${pkgs.xclip}/bin/xclip -o -selection clipboard | ${pkgs.wofi}/bin/wofi --dmenu -l 1 -p "Add todo")
-          ${self.packages.${system}.todoister}/bin/todoister "$chosen"
+          chosen=$(${pkgs.xclip}/bin/xclip -o -selection clipboard | ${pkgs.wofi}/bin/wofi --dmenu --gtk-dark -l 1 -p "Add todo")
+          ${self.packages.${system}.todoister}/bin/todoister --notify false "$chosen"
         '';
         default = self.packages.${system}.todoister;
       };
